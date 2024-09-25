@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  block-size: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: sans-serif;
+  /* background-color: #f1f1b4; */
+  background-color: green;
+}
+@media only screen and (min-width: 1440px) {
+  .book {
+    flex: 1;
+    position: relative;
+    /* width: 467px; */
+    width: 1.5fr;
+    /* height: 609px; */
+    height: 1fr;
+    min-width: 367px;
+    min-height: 509px;
+    max-width: 567px;
+    max-height: 709px;
+    transition: transform 0.5s;
+  }
+}
+/* @media only screen and (max-width: 1440px) {
+  .book {
+    flex: 1;
+    position: relative;
+    width: 467px;
+    height: 609px;
+    min-width: 367px;
+    min-height: 509px;
+    max-width: 567px;
+    max-height: 709px;
+    transition: transform 0.5s;
+  }
+} */
+/* @media only screen and (max-width: 1025px) {
+  .book {
+    flex: 1;
+    position: relative;
+    width: 0.2fr;
+    height: 1fr;
+    min-width: 367px;
+    min-height: 509px;
+    max-width: 567px;
+    max-height: 709px;
+    transition: transform 0.5s;
+  }
+} */
+.bMobile{
+  display: none;
+}
+@media only screen and (max-width: 480px) {
+  .book {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: 90%;
+    transition: transform 0.5s;
+
+    z-index: 0;
+  }
+  .b{
+    display: none;
+  }
+  .bMobile{
+    z-index: 1;
+    display: flex;
+    border: solid 5px red;
+    position: absolute;
+    /* left: 0; */
+    top: 5px;
+
+    width: 50px;
+    height: 96%;
+  }
+  .pr{
+    left: 0;
+  }
+  .nex{
+    right: 0;
+  }
+}
+
+img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+  }
+
+  .paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+  }
+
+  .front,
+  .back {
+    background-color: wheat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    transform-origin: left;
+    transition: transform 0.5s;
+  }
+  .front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid #f1f1b4;
+  }
+
+  .back {
+    z-index: 0;
+  }
+
+  .frontCont,
+  .backCont {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .backCont {
+    transform: rotateY(180deg);
+  }
+
+  .b{
+    margin: 10px;
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.5s;
+  }
+
+  button:hover i {
+    color: black;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  i {
+    font-size: 50px;
+    color: red;
+  }
+
+  .flipped .front,
+  .flipped .back {
+    transform: rotateY(-180deg);
+  }

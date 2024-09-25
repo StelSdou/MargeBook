@@ -1,0 +1,14 @@
+CREATE TABLE images (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    page_number INT,
+    image LONGBLOB
+);
+
+
+CREATE TABLE `book`.`october` (`id` INT NOT NULL AUTO_INCREMENT , `numPage` INT NOT NULL , `name` VARCHAR(255) NOT NULL , `year` YEAR NOT NULL , `image` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB; 
+
+$pdf_file = $_FILES['pdf_file'];
+
+// Έλεγχος και αποθήκευση του αρχείου PDF
+$upload_dir = 'uploads/';
+$upload_file = $upload_dir . basename($pdf_file['name']);
